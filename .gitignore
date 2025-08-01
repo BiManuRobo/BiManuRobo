@@ -1,0 +1,66 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc~
+*.pyc$
+
+# Virtual environment
+.venv/
+env/
+venv/
+virtualenv/
+
+# Ruff cache and files
+.ruff_cache/
+*.ruff.toml
+
+# Testing artifacts
+.coverage
+coverage.xml
+htmlcov/
+pytest_debug.log
+.pytest_cache/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+*.whl
+*.so
+*.dylib
+*.dll
+*.pyd
+*.pyz
+*.pyzw
+
+# Documentation build output
+docs/_build/
+docs/build/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.kdev4
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+\$RECYCLE.BIN/
+
+# uv lock file (optional, depends on your team workflow)
+uv.lock
+
+# Local development settings
+.env
+.local
+.settings

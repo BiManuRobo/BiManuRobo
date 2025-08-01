@@ -1,0 +1,76 @@
+[project]
+name = "BiManuRobo"
+version = "0.1.0"
+description = "BiManuRobo Code Repo"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "xuecheng liu", email = "xcliu@baai.ac.cn" }]
+
+# project dependencies
+dependencies = [
+  # add your own dependencies
+  "huggingface-hub",
+  "modelscope"
+]
+
+# scripts path
+[project.scripts]
+bimanurobo= "bimanurobo.main:main"
+# Add other scripts here
+
+[project.optional-dependencies]
+# dev dependencies
+dev = ["ruff", "pre-commit"]
+# test dependencies
+test = ["pytest"]
+# doc dependencies
+docs = ["sphinx"]
+
+# ruff format and lint config
+[tool.ruff]
+line-length = 100
+indent-width = 4
+# ruff format igonres
+exclude = [
+    ".git", ".venv", "__pypackages__",
+    "build", "dist", "node_modules"
+]
+
+[tool.ruff.lint]
+# 默认启用的规则集
+select = ["E4", "E7", "E9", "F"]  # 基础pycodestyle和Pyflakes规则
+ignore = []
+fixable = ["ALL"]  # 所有规则都可自动修复
+unfixable = []
+extend-select = [
+  "UP",   # Ruff's UP rule
+  "PERF", # Ruff's PERF rule
+  "RET",  # Ruff's RET rule
+  "RSE",  # Ruff's RSE rule
+  "NPY",  # Ruff's NPY rule
+  "N",    # Ruff's N rule
+  "I",   # isort (import sorting)
+  "ANN"
+]
+
+# 允许下划线前缀的未使用变量
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# 格式化风格（与Black兼容）
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true# 默认不格式化文档字符串中的代码示例
+
+# setuptools config
+[tool.setuptools.packages.find]
+where = ["src"]  # 源码目录
+include = [
+  "bimanurobo",
+  # Add other dirs
+  # "other_dir",
+]
+
+# add other configs
