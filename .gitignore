@@ -64,3 +64,5 @@ uv.lock
 .env
 .local
 .settings
+
+datas/

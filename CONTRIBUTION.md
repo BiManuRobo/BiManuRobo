@@ -48,7 +48,7 @@
 
 ## 🐞 报告 Bug
 
-如果你发现了 bug，请先查看 [Issues](https://https://github.com/BiManuRobo/BiManuRobo/issues) 是否已有相关报告。如果没有，请新建一个 issue 并提供以下信息：
+如果你发现了 bug，请先查看 [Issues](https://https://github.com/RobotCoin/RobotCoin/issues) 是否已有相关报告。如果没有，请新建一个 issue 并提供以下信息：
 
 - 操作系统和 Python 版本
 - 完整的错误日志

@@ -1,7 +1,7 @@
 [project]
-name = "BiManuRobo"
+name = "RobotCoin"
 version = "0.1.0"
-description = "BiManuRobo Code Repo"
+description = "RobotCoin Code Repo"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [{ name = "xuecheng liu", email = "xcliu@baai.ac.cn" }]
@@ -10,12 +10,13 @@ authors = [{ name = "xuecheng liu", email = "xcliu@baai.ac.cn" }]
 dependencies = [
   # add your own dependencies
   "huggingface-hub",
-  "modelscope"
+  "modelscope",
+  "draccus"
 ]
 
 # scripts path
 [project.scripts]
-bimanurobo= "bimanurobo.main:main"
+robotcoin= "robotcoin.main:main"
 # Add other scripts here
 
 [project.optional-dependencies]
@@ -49,7 +50,7 @@ extend-select = [
   "RSE",  # Ruff's RSE rule
   "NPY",  # Ruff's NPY rule
   "N",    # Ruff's N rule
-  "I",   # isort (import sorting)
+  # "I",   # isort (import sorting)
   "ANN"
 ]
 
@@ -68,7 +69,7 @@ docstring-code-format = true# 默认不格式化文档字符串中的代码示�
 [tool.setuptools.packages.find]
 where = ["src"]  # 源码目录
 include = [
-  "bimanurobo",
+  "robotcoin",
   # Add other dirs
   # "other_dir",
 ]
