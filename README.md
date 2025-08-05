@@ -1,8 +1,8 @@
-# BiManuRobo
+# RobotCoin
 
 > 🤖 面向具身双臂操作学习的大规模开放数据集
 
-**BiManuRobo** 是一个致力于推动具身智能发展的开放数据集，专注于提供高质量、多模态、跨形态的双臂操作数据。我们旨在打破当前双臂数据集在机器人本体上的限制，构建一个支持多样化机器人结构、促进策略迁移与泛化能力研究的统一数据生态。
+**RobotCoin** 是一个致力于推动具身智能发展的开放数据集，专注于提供高质量、多模态、跨形态的双臂操作数据。我们旨在打破当前双臂数据集在机器人本体上的限制，构建一个支持多样化机器人结构、促进策略迁移与泛化能力研究的统一数据生态。
 
 本项目不仅开放数据集供研究使用，更鼓励全球机器人厂商、研究机构、开发者共同贡献数据，形成“双向开放”的协作网络。平台将为所有贡献数据提供标准化处理、高质量标注与多模态融合支持，打造下一代具身学习的基础设施。
 
@@ -21,8 +21,8 @@
 
 ## 克隆仓库
 ```bash
-git clone https://github.com/BiManuRobo/BiManuRobo.git
-cd BiManuRobo
+git clone https://github.com/RobotCoin/RobotCoin.git
+cd RobotCoin
 ```
 
 ## 🛠 使用 uv 管理项目
@@ -47,15 +47,15 @@ uv sync
 
 ### 🔍 1. 搜索和下载子数据集
 
-数据集搜索页面：Refer to https://BiManuRobo.github.io
+数据集搜索页面：Refer to https://RobotCoin.github.io
 #### 搜索结果会给出子数据集下载脚本
 ```bash
-python -m bimanurobo.datasets.download --hub huggingface --ds_lists " \
+python -m robotcoin.datasets.download --hub huggingface --ds_lists " \
 pika_pickplace_cube_100 \
 aloha_fold_cloth_200 \
 "
 # 如果想从modelscope下载数据集，请使用以下脚本
-python -m bimanurobo.datasets.download --hub modelscope --ds_lists " \
+python -m robotcoin.datasets.download --hub modelscope --ds_lists " \
 pika_pickplace_cube_100 \
 aloha_fold_cloth_200 \
 "
@@ -63,12 +63,12 @@ aloha_fold_cloth_200 \
 数据集会默认保存到~/.cache/huggingface/或者~/.cache/modelscope/
 你也可以自定义数据集保存地址
 ```bash
-python -m bimanurobo.download --hub huggingface --ds_lists " \
+python -m robotcoin.datasets.download --hub huggingface --ds_lists " \
 pika_pickplace_cube_100 \
 aloha_fold_cloth_200 \
 " --download_path YOUR_DOWNLOAD_PATH
 # 如果想从modelscope下载数据集，请使用以下脚本
-python -m bimanurobo.download --hub modelscope --ds_lists " \
+python -m robotcoin.datasets.download --hub modelscope --ds_lists " \
 pika_pickplace_cube_100 \
 aloha_fold_cloth_200 \
 "  --download_path YOUR_DOWNLOAD_PATH
@@ -76,8 +76,8 @@ aloha_fold_cloth_200 \
 
 #### 或者搜索结果会列出子数据集列表，例子如下：
 ```bash
-bimanurobo/pika_pickplace_cube_100 
-bimanurobo/aloha_fold_cloth_200
+robotcoin/pika_pickplace_cube_100 
+robotcoin/aloha_fold_cloth_200
 ```
 你可以使用hugginface cli以及modelscope cli批量下载数据集
 另外，由于数据集使用lerobot格式，所以你也可以使用lerobot下载数据
@@ -85,7 +85,7 @@ bimanurobo/aloha_fold_cloth_200
 ### 2. 模型训练、推理、部署
 #### 模型训练(基于Lerobot实现)
 ```bash
-python -m bimanurobo.models.train --robot realman --ds_list " \
+python -m robotcoin.models.train --robot realman --ds_list " \
 baai-realman-picktoy-500 \
 baai-realman-foldcloth-100 \
 " \
@@ -94,7 +94,7 @@ baai-realman-foldcloth-100 \
 
 #### 模型推理与部署(基于Lerobot实现)
 ```bash
-python -m bimanurobo.models.deploy --robot realman --model your_model_name
+python -m robotcoin.models.deploy --robot realman --model your_model_name
 ```
 ---
 
@@ -103,10 +103,10 @@ python -m bimanurobo.models.deploy --robot realman --model your_model_name
 #### 上传数据集到你的hub
 ```bash
 # 上传到Huggingface或Modelscope
-python -m bimanurobo.datasets.upload --config your_config_yaml_path
+python -m robotcoin.datasets.upload --config your_config_yaml_path
 ```
-#### 通过邮件通知BiManuRobo项目组
-在邮件中标明repo_ids，BiManuRobo项目组将协助对数据集进行整理、标注、测试，并上传到BiManuRobo Hub
+#### 通过邮件通知RobotCoin项目组
+在邮件中标明repo_ids，RobotCoin项目组将协助对数据集进行整理、标注、测试，并上传到RobotCoin Hub
 
 ## 🧪 标准开发流程（推荐）
 
