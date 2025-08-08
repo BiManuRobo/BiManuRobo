@@ -1,3 +1,0 @@
-"""
-Bimanurobo Policy Training
-"""
